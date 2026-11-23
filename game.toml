@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Dead or Alive"
+id = "SLUS-00606"
+players = 1
+exe = "disc/SLUS_006.06"
+disc = "disc/Dead or Alive (USA).cue"
+discs = ["disc/Dead or Alive (USA).cue"]
+disc_serials = ["SLUS-00606"]
+load_address = "0x80010000"
+entry_pc = "0x80010E44"
+text_size = "0x00084800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Dead or Alive (USA) (Track 1).bin"
+cue_name = "Dead or Alive (USA).cue"
+boot_exe = "SLUS_006.06"
+known_sizes = [153251616]
+known_md5 = [
+  "3f61d4a7bc3b5f43c8ceaf7517a5d897",
+]
+known_sha1 = [
+  "8f76598e9c35bd725a08dc6c750221c19d518f3b",
+]
+known_crc32 = [
+  "22432a77",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Dead or Alive Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 29
+required_disc_fp = "48bf70951be1a781b1bc80930393fb1d360c5a6747d89a6145ef4450ab4d7fcd"

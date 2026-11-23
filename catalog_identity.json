@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Dead or Alive",
+    "id": "SLUS-00606",
+    "boot_exe": "SLUS_006.06"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Dead or Alive (USA).cue",
+    "bin_name": "Dead or Alive (USA) (Track 1).bin",
+    "track_counts": [
+      29
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 153251616,
+      "md5": "3f61d4a7bc3b5f43c8ceaf7517a5d897",
+      "sha1": "8f76598e9c35bd725a08dc6c750221c19d518f3b",
+      "crc32": "22432a77"
+    },
+    "disc_fp": "48bf70951be1a781b1bc80930393fb1d360c5a6747d89a6145ef4450ab4d7fcd"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80010E44",
+    "text_size": "0x00084800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 692,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

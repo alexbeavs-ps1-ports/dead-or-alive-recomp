@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "dead-or-alive-psx",
+  "name": "Dead or Alive",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "dead-or-alive-recomp",
+  "rom_identity": {
+    "crc32": [
+      "22432a77"
+    ],
+    "md5": [
+      "3f61d4a7bc3b5f43c8ceaf7517a5d897"
+    ],
+    "sha1": [
+      "8f76598e9c35bd725a08dc6c750221c19d518f3b"
+    ],
+    "disc_serials": [
+      "SLUS-00606"
+    ],
+    "sizes": [
+      153251616
+    ],
+    "filenames": [
+      "Dead or Alive (USA).cue",
+      "Dead or Alive (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      29
+    ],
+    "disc_fps": [
+      "48bf70951be1a781b1bc80930393fb1d360c5a6747d89a6145ef4450ab4d7fcd"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/dead-or-alive-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "dead-or-alive-*-windows-x64.zip",
+      "linux-x64": "dead-or-alive-*-linux-x64.zip",
+      "macos-arm64": "dead-or-alive-*-macos-arm64.zip",
+      "macos-x64": "dead-or-alive-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "dead_or_alive.exe",
+    "linux": "dead_or_alive",
+    "macos": "dead_or_alive"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/dead-or-alive-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
